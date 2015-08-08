@@ -15,6 +15,7 @@ RUN gem clean cache && npm cache clean && apt-get autoremove -y
 RUN apt-get clean && rm -rf /var/lib/apt/list/*
 
 VOLUME /srv/sails
+WORKDIR /srv/sails
 EXPOSE 1337
 ENTRYPOINT [ "/usr/bin/sails" ]
 CMD [ "lift" ]
